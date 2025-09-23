@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+
+// Definição da estrutura da carta
+typedef struct {
+    char estado;               // Letra para identificar o estado (ex: 'A', 'B')
+    char codigo[5];            // Código da carta (ex: "A01")
+    char cidade[30];           // Nome da cidade principal
+    int populacao;             // População
+    float area;                // Área em Km²
+    float pib;                 // PIB
+    int pontosTuristicos;      // Número de pontos turísticos
+} Carta;
+
+int main() {
+    // Criando duas cartas
+    Carta carta1, carta2;
+
+    // Preenchendo carta 1 (Ceará)
+    carta1.estado = 'A';
+    strcpy(carta1.codigo, "A01");
+    strcpy(carta1.cidade, "Fortaleza");
+    carta1.populacao = 9240580;   // População aproximada do Ceará
+    carta1.area = 148920.47f;     // Área em km²
+    carta1.pib = 169.3f;          // PIB em bilhões aproximado
+    carta1.pontosTuristicos = 15;
+
+    // Preenchendo carta 2 (Bahia)
+    carta2.estado = 'B';
+    strcpy(carta2.codigo, "B01");
+    strcpy(carta2.cidade, "Salvador");
+    carta2.populacao = 14812617;  // População aproximada da Bahia
+    carta2.area = 564692.67f;     // Área em km²
+    carta2.pib = 277.3f;          // PIB em bilhões aproximado
+    carta2.pontosTuristicos = 25;
+
+    // Exibindo as cartas
+    printf("=== Carta 1 ===\n");
+    printf("Estado: %c\n", carta1.estado);
+    printf("Código: %s\n", carta1.codigo);
+    printf("Cidade: %s\n", carta1.cidade);
+    printf("População: %d\n", carta1.populacao);
+    printf("Área: %.2f km²\n", carta1.area);
+    printf("PIB: %.2f bilhões\n", carta1.pib);
+    printf("Pontos Turísticos: %d\n", carta1.pontosTuristicos);
+
+    printf("\n=== Carta 2 ===\n");
+    printf("Estado: %c\n", carta2.estado);
+    printf("Código: %s\n", carta2.codigo);
+    printf("Cidade: %s\n", carta2.cidade);
+    printf("População: %d\n", carta2.populacao);
+    printf("Área: %.2f km²\n", carta2.area);
+    printf("PIB: %.2f bilhões\n", carta2.pib);
+    printf("Pontos Turísticos: %d\n", carta2.pontosTuristicos);
+
+    return 0;
+}
